@@ -1,0 +1,1 @@
+- develop an idea for the game

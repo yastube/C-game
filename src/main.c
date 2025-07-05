@@ -7,10 +7,16 @@ int main(void) {
 
     InitGameWindow(screenWidth, screenHeight, "Game");
 
+    const char* text = "test";
+    Vector2 measuring = MeasureTextEx(GetFontDefault(), text, 20, 1.0f);
+
     while (!WindowShouldClose()) {
+        float screenMidX = GetRenderWidth() / 2.f;
+        float screenMidY = GetRenderHeight() / 2.f;
+
         BeginDrawing();
-            ClearBackground(RAYWHITE);
-            DrawText("test", 190, 200, 20, LIGHTGRAY);
+            ClearBackground(BLACK);
+            DrawText("test", screenMidX - measuring.x, screenMidY - measuring.y, 20, LIGHTGRAY);
         EndDrawing();
     }
 

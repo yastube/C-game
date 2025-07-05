@@ -13,7 +13,8 @@ add_library(Engine STATIC
 )
 target_link_libraries(Engine PRIVATE raylib)
 
-add_executable(Game PRIVATE
+add_executable(Game
     src/main.c
 )
+target_include_directories(Game PRIVATE engine)
 target_link_libraries(Game PRIVATE Engine raylib)

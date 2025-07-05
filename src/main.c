@@ -1,14 +1,15 @@
-#include "raylib.h"
-#include "window.h"
+#include <raylib.h> 
+
+const int initialWidth = 800;
+const int initialHeight = 450;
 
 int main(void) {
-    const int screenWidth = 800;
-    const int screenHeight = 450;
-
-    InitGameWindow(screenWidth, screenHeight, "Game");
+    SetConfigFlags(FLAG_WINDOW_RESIZABLE);
+    InitWindow(initialWidth, initialHeight, "Game");
+    Font font = LoadFont("res/fonts/Poppins.ttf");
 
     const char* text = "test";
-    Vector2 measuring = MeasureTextEx(GetFontDefault(), text, 20, 1.0f);
+    Vector2 measuring = MeasureTextEx(font, text, 20, 1.0f);
 
     while (!WindowShouldClose()) {
         float screenMidX = GetRenderWidth() / 2.f;
@@ -16,7 +17,7 @@ int main(void) {
 
         BeginDrawing();
             ClearBackground(BLACK);
-            DrawText("test", screenMidX - measuring.x, screenMidY - measuring.y, 20, LIGHTGRAY);
+            DrawTextEx(font, "test", (Vector2){screenMidX - measuring.x, screenMidY - measuring.y}, 20, 1.0f, LIGHTGRAY);
         EndDrawing();
     }
 

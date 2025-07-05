@@ -8,6 +8,10 @@
                 "-fdiagnostics-color=always",
                 "-g",
                 "${file}",
+                "-lraylib",
+                "-lgdi32",
+                "-lwinmm",
+                "-mwindows",
                 "-o",
                 "${fileDirname}\\${fileBasenameNoExtension}.exe"
             ],

@@ -3,9 +3,14 @@
         {
             "type": "cppbuild",
             "label": "C/C++: gcc.exe build active file",
+<<<<<<< HEAD
             "command": "make", //"C:\\w64devkit\\bin\\gcc.exe",
             "args": [
             ],
+=======
+            "command": "make",
+            "args": [],
+>>>>>>> 164cedf9959e5bd0e567eda96e86eb5e4f67784d
             "options": {
                 "cwd": "${fileDirname}"
             },

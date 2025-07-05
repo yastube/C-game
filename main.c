@@ -8,7 +8,7 @@ int main(void) {
     InitWindow(initialWidth, initialHeight, "Game");
     Font font = LoadFont("res/fonts/Poppins.ttf");
 
-    const char* text = "test";
+    const char* text = "test suahdua husahdu sahdu haushd";
     Vector2 measuring = MeasureTextEx(font, text, 20, 1.0f);
 
     while (!WindowShouldClose()) {
@@ -17,7 +17,7 @@ int main(void) {
 
         BeginDrawing();
             ClearBackground(BLACK);
-            DrawTextEx(font, "test", (Vector2){screenMidX - measuring.x, screenMidY - measuring.y}, 20, 1.0f, LIGHTGRAY);
+            DrawTextEx(font, text, (Vector2){screenMidX - measuring.x, screenMidY - measuring.y}, 20, 1.0f, LIGHTGRAY);
         EndDrawing();
     }
 

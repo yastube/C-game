@@ -1,10 +1,9 @@
 # Project settings
-TARGET = build/game.exe
-OUTDIR = build
+TARGET = game.exe
 
 # Compiler and flags
 CC = gcc
-CFLAGS = -I"C:/raylib/raylib/src" -I"./engine" -Wall
+CFLAGS = -I"C:/raylib/raylib/src" -I. -Wall
 
 # Add the Raylib library folder path here
 LDFLAGS = -L"C:/raylib/raylib/src"
@@ -14,21 +13,9 @@ LIBS = -lraylib -lopengl32 -lgdi32 -lwinmm
 
 # Source files
 SOURCES = \
-	src/main.c \
-	engine/window.c
+	main.c
 
-# Build steps
-all: $(OUTDIR) $(TARGET)
+all:
+	$(CC) $(CFLAGS) $(SOURCES) -o $(TARGET) $(LDFLAGS) $(LIBS) -mwindows
 
-$(OUTDIR):
-	@echo Creating output folder...
-	@mkdir $(OUTDIR)
-
-$(TARGET): $(SOURCES)
-	@echo Compiling...
-	$(CC) $(CFLAGS) $(SOURCES) -o $(TARGET) $(LDFLAGS) $(LIBS)
-
-clean:
-	-del /Q $(OUTDIR)\* 2>nul || echo Already clean
-
-.PHONY: all clean
+.PHONY: all

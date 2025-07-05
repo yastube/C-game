@@ -16,6 +16,7 @@ SOURCES = \
 	main.c
 
 all:
-	$(CC) $(CFLAGS) $(SOURCES) -o $(TARGET) $(LDFLAGS) $(LIBS) -mwindows
+	$(CC) $(CFLAGS) $(SOURCES) -o $(TARGET) $(LDFLAGS) $(LIBS) 
+# -mwindows
 
 .PHONY: all

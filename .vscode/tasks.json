@@ -3,17 +3,8 @@
         {
             "type": "cppbuild",
             "label": "C/C++: gcc.exe build active file",
-            "command": "C:\\w64devkit\\bin\\gcc.exe",
+            "command": "make", //"C:\\w64devkit\\bin\\gcc.exe",
             "args": [
-                "-fdiagnostics-color=always",
-                "-g",
-                "${file}",
-                "-lraylib",
-                "-lgdi32",
-                "-lwinmm",
-                "-mwindows",
-                "-o",
-                "${fileDirname}\\${fileBasenameNoExtension}.exe"
             ],
             "options": {
                 "cwd": "${fileDirname}"

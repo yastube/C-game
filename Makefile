@@ -1,5 +1,5 @@
 # Project settings
-TARGET = game.exe
+TARGET = build/game.exe
 
 # Compiler and flags
 CC = gcc
